@@ -1,0 +1,10 @@
+{
+  "configurations": [
+    {
+      "type": "firefox",
+      "request": "launch",
+      "name": "Launch index.html",
+      "file": "${workspaceFolder}/index.html"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# Le-Grimoire
+* Note-making App
+
+@startuml
+' Definição dos atores
+actor "Usuário" as user
+actor "Administrador" as admin
+actor "Sistema Externo" as external
+
+' Definição do sistema
+rectangle "Nome do Sistema" {
+    user -- (Criar Nota)
+    user -- (Obter Nota)
+    user -- (Editar Nota)
+    user -- (Deletar Nota)
+}
+
+' Relacionamentos opcionais
+(Caso de Uso 1) --|> (Subcaso 1) : Extensão
+(Caso de Uso 2) ..> (Caso de Uso Comum) : Inclusão
+@enduml

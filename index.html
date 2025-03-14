@@ -20,5 +20,30 @@
         I'm currently learning web development and I'm looking for a job.<br> 
         I'm a fast learner and I'm willing to learn new things.
     </p>
+    <h3>Notes</h3>
+    <p>
+        <form id="noteForm"></form>
+            <input type="text" id="noteInput" placeholder="Enter your note here">
+            <button type="button" onclick="addNote()">Create</button>
+        </form>
+        <ul id="noteList"></ul>
+
+        <script>
+            function addNote() {
+                const noteInput = document.getElementById('noteInput');
+                const noteList = document.getElementById('noteList');
+                const noteText = noteInput.value;
+
+                if (noteText.trim() !== "") {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = noteText;
+                    noteList.appendChild(listItem);
+                    noteInput.value = "";
+                }
+            }
+        </script>
+    </p>
+        
+
 </body>
 </html>

@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Estudo001.Main",
+            "projectName": "2025_6096d6df"
+        },
+        {
             "type": "node",
             "name": "Executar Arquivo Atual",
             "request": "launch",

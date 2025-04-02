@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
+            "mainClass": "Matrix.Main",
+            "projectName": "2025_6096d6df"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
             "mainClass": "Velha.Main",
             "projectName": "2025_6096d6df"
         },

@@ -5,4 +5,5 @@ public class Monolith {
         System.out.println("Monolith started.");
         // Add your monolith logic here
     }
+    public static void 
 }

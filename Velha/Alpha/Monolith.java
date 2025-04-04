@@ -31,7 +31,57 @@ public class Monolith {
         endTurn();
         checkWinner(); // criar
     }
-
+    private static void checkPlayability() {
+        say("Verificando jogabilidade...");
+        if (isInPlayMode == false) {
+            say("Jogo encerrado!");
+            return;
+        }
+        if (boardIsFull() == true) {
+            say("Empate! Nenhum jogador venceu.");
+            isInPlayMode = false; // Encerra o jogo
+        }
+    }
+    private static void checkWinner() {
+        say("Verificando vencedor...");
+        // Verifica linhas
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][0] == currentPlayer && board[i][1] == currentPlayer && board[i][2] == currentPlayer) {
+                say("Jogador " + currentPlayer + " venceu!");
+                isInPlayMode = false; // Encerra o jogo
+                return;
+            }
+        }
+        // Verifica colunas
+        for (int j = 0; j < board[0].length; j++) {
+            if (board[0][j] == currentPlayer && board[1][j] == currentPlayer && board[2][j] == currentPlayer) {
+                say("Jogador " + currentPlayer + " venceu!");
+                isInPlayMode = false; // Encerra o jogo
+                return;
+            }
+        }
+        // Verifica diagonais
+        if (board[0][0] == currentPlayer && board[1][1] == currentPlayer && board[2][2] == currentPlayer) {
+            say("Jogador " + currentPlayer + " venceu!");
+            isInPlayMode = false; // Encerra o jogo
+            return;
+        }
+        if (board[0][2] == currentPlayer && board[1][1] == currentPlayer && board[2][0] == currentPlayer) {
+            say("Jogador " + currentPlayer + " venceu!");
+            isInPlayMode = false; // Encerra o jogo
+            return;
+        }
+    }
+    private static boolean boardIsFull() {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                if (board[i][j] == emptySquareChar) {
+                    return false; // Se encontrar um quadrado vazio, o tabuleiro não está cheio
+                }
+            }
+        }
+        return true; // Se não encontrar quadrados vazios, o tabuleiro está cheio
+    }
     private static void endTurn() {
         say("Turno encerrado!");
     }
